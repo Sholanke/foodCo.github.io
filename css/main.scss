@@ -1,0 +1,748 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    font-family: "Raleway";
+    text-decoration: none;
+    list-style: none;
+    color: rgb(53, 53, 53);
+    font-size: 2.9vmin;
+    font-weight: 900;    
+    position: relative;
+    z-index: 1;
+    transition: .2s ease;
+    background-size: cover;
+}
+$theme1: rgb(238, 203, 5);
+$lsmall: 'image3.jpg';
+$rsmall: 'image2.jpg';
+$lineHeight: 1.8vmax;
+$bpad: 20vmin;
+$bg: rgb(255, 255, 255);
+$mobile: 800px;
+
+.bg{
+    height: 100%;
+    background: rgba(199, 199, 199, 0.356);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 81.8vmin;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .5;
+}
+body{
+    background: $bg;
+    position: relative;
+    transition: .2s ease-in-out;
+    min-height: 300vh;
+}
+.topMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vmin $bpad + 2vmin;  
+    background: $bg;
+    position: relative;
+    ul{
+        width: 50vmin;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        right: $bpad + 2vmin;
+        li{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            a:hover{
+              font-size: 1.6vmax; 
+            }
+        }
+    }
+    .rbox, .lbox, .lbox1{
+        height: 19vmin;
+        width: $bpad;
+        position: absolute;
+        background: #fff;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.199);
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+    .lbox{
+        left: 0;
+        height: 38vmin; 
+        background: rgb(226, 225, 225);
+        box-shadow: none;
+    }
+    .lbox1{
+        left: 0;
+        z-index: 4;
+        background: linear-gradient(rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.068)), url($lsmall);
+        background-position: center;
+        background-size: cover;
+    }
+}
+.top{
+    min-height: 150vmin;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 $bpad;
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50%;
+    grid-template-areas: 
+    "top1"
+    "top2"
+    ;
+    .box{
+        z-index: 1;
+    }
+    .top1{
+        grid-area: top1;
+        background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('image1.jpg');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;      
+
+        p{
+            display: block;
+            font-size: 5vmax;
+            position: absolute;
+            font-weight: 100;
+            margin: auto;
+            color: #fff;
+            animation-name: fadeInTop;
+            animation-duration: 0;
+            text-shadow: 0 3px 20px rgba(0, 0, 0, 0.397);
+        }
+    }
+    .top2{
+        grid-area: top2;
+        background: rgba(255, 255, 255, 0.918);
+        padding: 0 7vmin; 
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: relative;
+        h1{
+            font-size: 2.3vmax;
+            margin: 12vmin 0 0 0vmin;
+            color: rgb(58, 58, 58);
+            font-family: 'Happy Monkey';
+        }
+        p{
+            font-size: 1.5vmax;
+            margin: 0 auto;
+            width: 80%;
+            color: rgb(77, 77, 77);
+            line-height: $lineHeight + .3vmax;
+
+        }
+        li{
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 3vmax;
+            a{
+                background: $theme1;
+                color: #fff;
+                font-weight: 300;
+                font-family: 'Happy Monkey';
+                box-shadow: 0 .2vmin 20px -3px rgba(0, 0, 0, 0.192);
+                padding: .5vmax 2vmax;
+                transition:.2s ease-in-out;
+                font-size: 1.6vmax;
+                position: absolute;
+            }
+            a:hover{
+                box-shadow: 0 10px 21px -7px rgba(0, 0, 0, 0.178);
+                top: -.2vmax;
+
+            }
+        }
+        ul{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 1vmax;
+            a{
+                font-size: 1.3vmax;
+                display: inline;
+                font-family: 'Montserrat';
+                color: $theme1;
+            }
+        }
+    }
+
+    .lbox, .lbox3, .rbox, .rbox2, .lbox4{
+        height: 12.2vmin;
+        width: $bpad;
+        background: rgb(236, 235, 235);
+        position: absolute;
+        z-index: 20;
+    }
+    .lbox2{
+        top: 12.2vmin;
+        height: 19vmin;
+        width: $bpad;
+        background: #fff;
+        position: absolute;
+        z-index: 20;
+        box-shadow: 5px 15px 50px rgba(0, 0, 0, 0.1);
+    }
+    .lbox3{
+        left: $bpad;
+        background: rgb(226, 225, 225);
+        box-shadow: 3px 5px 30px rgba(0, 0, 0, 0.1);
+    }
+    .rbox , .rbox2{
+        height: 19vmin;
+        right: 0;
+        top: 45%;
+        background: #fff;
+        box-shadow: 3px 5px 50px rgba(0, 0, 0, 0.185);
+        z-index: 20;
+    }
+    .rbox{
+        top: 32.5%;
+        background: rgb(236, 235, 235);
+    }
+    .rbox3{
+        height: 19vmin;
+        width: $bpad;
+        background: linear-gradient(rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.068)), url($rsmall);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 32.5%;
+        right: -$bpad;
+    }
+    .lbox4{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.233)), url('image5.jpg');
+        position: absolute;    
+        background-size: cover;
+        background-position: center;
+        top: 50%;
+        margin-top: -15vmin;
+        z-index: 20;
+        box-shadow: 3px 5px 50px rgba(0, 0, 0, 0.185);
+        height: 20vmin;
+        height: 21vmin;
+    }
+}
+#dishes{
+    margin: 0 $bpad;
+    margin-bottom: 10vmin;
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3vmax;
+    opacity: .9;
+
+    .dish{
+        height: 30vmax;
+        box-shadow: 0 2px 20px -2px rgba(43, 43, 43, 0.151) ;
+        background: url($rsmall);
+        transition: .2s ease-in-out;
+        background-size: 106%;
+        background-position: center;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+
+        .lgr{
+           background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+           height: 100%;
+           width: 100%;
+           position: absolute;
+           top: 0;
+           display: none;
+           transition: 1s ease-in-out;
+        }
+        .about{
+            background: #fff;
+            text-align: left;
+            padding: 1vmax;
+            height: 18.7%;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0;
+            transition: .2s ease-in-out;
+            z-index: 2;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.479);
+            h1{
+                font-size: 1.7vmax;
+                color: rgb(58, 58, 58);
+                font-family: 'Happy Monkey';
+                margin-bottom: .5vmax;
+            }
+            p{
+                font-size: 1vmax;
+                line-height: 1.4vmax;
+                width: 60%;
+            }
+            .order{
+                position: absolute;
+                bottom: .2vmax;
+                right: 1vmax;
+                font-size: 1.2vmax;
+                font-family: 'Charmonman';
+                color: darken($theme1, 10%);
+            }
+        }
+    }
+    .dish:hover {
+        background-size: 120%;
+    }
+    .dish:hover .lgr{
+        display: block;
+    }
+    .dish:hover .about{
+        height: 23.2%;
+    }
+    .one, .six{
+        background-image: url('smallBBQ.png');
+    
+    }
+    .three, .five, .seven{
+        background-image: url('image4.jpg');
+    }
+}
+.secHeading{
+    font-size: 1.9vmax;
+    font-family: 'Damion';
+    display: block;
+}
+.secAbout, .secHeading{
+    width: 29vmax;
+}
+.secAbout{
+    font-size: 1.3vmax;
+    margin-top: 1vmax;
+    padding-left: .6vmax;
+    color: rgb(77, 77, 77);
+    line-height: 1.8vmax;
+    display: inline-block;
+    height: 100%;
+    font-family: 'Charmonman';
+}
+.secAbout::before{
+    content: '';
+    height: 100%;
+    width: .4vmax;
+    display: inline-block;
+    background: $theme1;
+    border-radius: .05vmax;
+    position: absolute;
+    left: -.6vmax;
+}
+.intro{
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: $bpad;  
+    margin: 5vmax 0 0 0; 
+    .fa-utensils{
+        position: absolute;
+        left: calc(20vmin + 13vmax);
+        font-size: 8vmax;
+        opacity: .5;
+    }
+}
+.secIntro{
+    font-size: 2.4vmax;
+    font-family: 'Damion';
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    margin: 2vmax 0;
+    margin-left: $bpad;
+}
+.secIntro::before{
+    content: '';
+    height: .3vmax;
+    width: 7%;
+    display: inline-block;
+    background: $theme1;
+    border-radius: 100vh;
+    margin-right: .7vmax;
+}
+.chefs{
+    background: rgb(255, 255, 255);
+    padding: 4vmax;
+    padding-bottom: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+    text-align: center;    
+    z-index: 20;
+    margin: 0 8vmin;
+    opacity: .9;
+    .chef{
+        display: inline-flex;
+        align-items: center;
+        width: 25vmax;
+        margin: 0 0 0 0;
+        margin-bottom: 4vmax;
+
+        .profpic{
+            height: 10.5vmax;
+            width: 10.5vmax;
+            background: url('chef1.jpg');
+            background-size: cover;
+            background-position: center;
+            border: .3vmax outset $theme1;
+            border-radius: 100vh;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            transition: .6s ease;
+        }
+        .profpic:hover .chefIntro{
+            opacity: 1;
+        }
+        span{
+            margin-left: .5vmax;
+            text-align: left;
+        }
+        p{
+            font-size: 1.5vmax;
+        }
+        p:last-child{
+            font-family: 'Charmonman';
+        }
+        .four{
+            background-image: url('chef3.jpg')
+        }
+        .two{
+            background-image: url('chef2.jpg')
+        }
+        .three{
+            background-image: url('chef4.jpg');
+        }
+        .five{
+            background-image: url('chef5.jpg');
+        }
+    }
+}
+.menuContainer{
+    display: none;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 2.8vmax;
+    width: 2.9vmax;
+    align-items: flex-end;
+    span{
+        display: block;
+        width: 100%;
+        height: 15%;
+        background: rgb(85, 85, 85);
+    }
+}
+.close .barOne{
+    transform: rotate(45deg);
+    transform-origin: top right;
+
+}
+.close .barTwo{
+    opacity: 0;
+    transition: 0;
+}
+.close .barThree{
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+}
+body::-webkit-scrollbar{
+    width: 17px;
+}
+body::-webkit-scrollbar-thumb{
+    background: darken($theme1, 10%);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.137);
+
+}
+.absltImg{
+    position: absolute;
+    margin-top: -10%;
+    height: 25vmax;
+    left: -1vmax;
+}
+.chefIntro{
+    height: fit-content;
+    width: 13vmax;
+    background: rgb(43, 43, 43);
+    position: absolute;
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 12% 100%, 12% 34%, 0 50%, 12% 66%);
+    right: -125%;
+    padding: .8vmax .5vmax;
+    text-align: left;
+    z-index: 20;
+    opacity: 0;
+
+    h1, h2{
+        margin-left: 20%;
+        color: $theme1;
+    }
+    h1{
+        font-size: 1.5vmax;
+        font-family: "Happy Monkey";
+        letter-spacing: 1px;
+    }
+    h2{
+        font-size: 1.1vmax;
+        font-weight: 100;
+        color: rgba(255, 255, 255, 0.89);  
+    }
+}
+.form{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgb(43, 43, 43);
+    padding: 1.6vmax;
+    border-radius: 1px;
+    z-index: 2;
+
+    p{
+        font-size: 1.45vmax;
+        width: 70%;
+        border-left: .3vmax solid $theme1;
+        padding-left: .5vmax;
+        color: #fff;
+        font-weight: 100;
+    }
+
+    input{
+        font-size: 1.2vmax;
+        font-family: "Happy Monkey";
+        padding: 1vmax; 
+        display: block; 
+        width: 15vmax;
+        color: rgba(63, 63, 63, 0.767);
+        border: 0;
+        border-radius: .01vmax;
+    }
+    input:invalid{
+        background: rgb(247, 137, 137);
+    }
+    ::placeholder{
+        opacity: .5;
+        color: rgb(19, 18, 18);
+        font-family: "Raleway";
+    }
+    textarea{
+        padding: 1vmax; 
+        border: 0;
+        border-radius: .3vmax;
+        color:rgba(63, 63, 63, 0.767);        
+        font-size: 1.2vmax;
+        font-family: "Happy Monkey";
+        width: calc(100% - 2vmax);
+        display: block;
+        height: 6vmax;
+    }
+    .submit{
+        height: normal;
+        color: #fff;
+        background: $theme1;
+        width: 13vmax;
+        padding: 1vmax 0;
+        letter-spacing: 1px;
+    }
+  
+}
+.contactUs{
+    display: grid;
+    margin: 0 3vmax;
+    height: 40vmax;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.158);
+    grid-template-columns: 1fr 2.5fr;
+
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+.app{
+    margin: 0 3vmax 0 3vmax;
+    padding: 3vmax 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;        
+    background: rgb(43, 43, 43);
+    box-shadow: 0 -2px 10px rgba(180, 180, 180, 0.418);
+    overflow: hidden;
+    // rgb(219, 53, 53)
+
+    .clip{
+       background: $theme1;
+       clip-path: polygon(0 0, 56% 0, 15% 100%, 0 100%);
+       height: 100%;
+       width: 100%;
+       position: absolute;
+       top: 0;
+
+    }
+    .leftBtn, .rightBtn{
+        margin: 0 1vmax;
+        padding: 1vmax;
+        color: #fff;
+        background: transparent;
+        border: none;
+    }
+    .leftBtn:hover, .rightBtn:hover{
+        background: rgba(255, 255, 255, 0.295);
+    }
+    .rightBtn{
+        color: $theme1;
+    }
+    .phone{
+        height: 35.5vmax;
+        transition: 1s ease;
+    }
+    .appLink{
+        height: 4vmax;
+    }
+    .aboutApp{
+        transition: .5s ease-in;
+        p{
+            font-size: 4.5vmax;
+            margin: 3vmax 0;
+            font-weight: 100;
+            color: #fff;
+        }
+        p:before{
+            content: '';
+            height: .4vmax;
+            display: block;
+            border-radius: 100vh;
+            width: 10%;
+            background: $theme1;
+        }
+    }
+    .pageTwo, .pageThree{
+        font-size: 5vmax;
+        color: #fff;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 100%;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transition: .7s ease;
+    }
+}
+.dots{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4vmax auto; 
+    width: 30vmax;
+
+}
+.dot{
+    height: 1.5vmax;
+    width: 1.5vmax;
+    background: $theme1;
+    display: inline-block;
+    border-radius: 100vh;
+}
+
+$bpad2: 1vmin;
+@media (max-width: $mobile){
+    $bpad: 0;
+    .chefs{
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+        overflow-y: hidden;
+        .chef{
+            display: block;
+            margin: 0 5vmax;
+
+        }
+    }
+    .chefs::-webkit-scrollbar{
+        height: 1vmax;
+        margin-bottom: 1vmax;
+    }
+    .chefs::-webkit-scrollbar-thumb{
+        background: rgba(58, 58, 58, 0.596);
+        border-radius: 100vh;
+    }
+    .form{
+        margin: 0 $bpad2;
+    }
+    .menuContainer{
+        display: flex;
+    }
+    .topMenu .hideMenu{
+        display: none;
+    }
+    .absltImg{
+        left: -17vmax;
+    }
+    
+    #dishes{
+        grid-template-columns: 1fr 1fr;
+        margin: 0 $bpad2 + 8vmin;
+    }
+    .topMenu {
+        padding: 2vmin $bpad2;
+        z-index: 4;
+
+        .rbox, .lbox, .lbox1{
+            width: 0;
+        }
+    }
+    .top{
+        margin: 0 1vmax;
+        .lbox4, .rbox3{
+            width: 0;
+        }
+    }
+    .intro{
+        padding-right: $bpad2 + 3vmin;
+    }
+    .secIntro{
+        margin-left: $bpad2 + 3vmin;
+    }
+    .chefs{
+        margin: 0 $bpad2;
+    }
+}
+.fadeInTop{
+    animation-name: fadeInTop;
+    animation-duration: 1s;
+}
+@keyframes fadeInTop{
+    0%{
+        opacity: 0;
+        margin-top: -8vmax;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        margin-top: 0;
+        opacity: 1;
+    }
+}
